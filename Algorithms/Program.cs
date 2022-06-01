@@ -14,6 +14,7 @@
                 Console.WriteLine(" 5. Merge sort");
                 Console.WriteLine(" 6. Anagram Detection");
                 Console.WriteLine(" 7. Prime numbers in the range 0 - 1000");
+                Console.WriteLine(" 8. Prime numbers in 0 - 1000 that are anagram and palindrome");
                 Console.WriteLine(" 0. Exit");
                 Console.Write("Enter your choice : ");
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -46,6 +47,10 @@
                     case 7:
                         PrimesInRange primesInRange = new PrimesInRange();
                         primesInRange.Prime();
+                        break;
+                    case 8:
+                        ExtendedPrime extendedPrime = new ExtendedPrime();
+                        extendedPrime.Prime();
                         break;
                     case 0:
                         return;
