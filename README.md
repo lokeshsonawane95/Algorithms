@@ -7,6 +7,6 @@
 6. Anagram Detection
 7. Prime numbers in the range 0 - 1000
 8. Prime numbers in 0 - 1000 that are anagram and palindrome
-9. Search and sort algorithms using Generics
-10. Find your number
-11. Customize message demonstration using String function and RegEx
+9. Find your number
+10. Search and sort algorithms using Generics
+12. Customize message demonstration using String function and RegEx
