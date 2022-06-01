@@ -15,6 +15,7 @@
                 Console.WriteLine(" 6. Anagram Detection");
                 Console.WriteLine(" 7. Prime numbers in the range 0 - 1000");
                 Console.WriteLine(" 8. Prime numbers in 0 - 1000 that are anagram and palindrome");
+                Console.WriteLine(" 9. Find your number");
                 Console.WriteLine(" 0. Exit");
                 Console.Write("Enter your choice : ");
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -51,6 +52,10 @@
                     case 8:
                         ExtendedPrime extendedPrime = new ExtendedPrime();
                         extendedPrime.Prime();
+                        break;
+                    case 9:
+                        FindYourNumber findYourNumber = new FindYourNumber();
+                        findYourNumber.Find();
                         break;
                     case 0:
                         return;
