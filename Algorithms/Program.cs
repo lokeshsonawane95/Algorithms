@@ -12,6 +12,7 @@
                 Console.WriteLine(" 3. Insertion sort");
                 Console.WriteLine(" 4. Bubble sort");
                 Console.WriteLine(" 5. Merge sort");
+                Console.WriteLine(" 6. Anagram Detection");
                 Console.WriteLine(" 0. Exit");
                 Console.Write("Enter your choice : ");
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -36,6 +37,10 @@
                     case 5:
                         MergeSort mergeSort = new MergeSort();
                         mergeSort.Driver();
+                        break;
+                    case 6:
+                        AnagramDetection anagramDetection = new AnagramDetection();
+                        anagramDetection.Anagram();
                         break;
                     case 0:
                         return;
