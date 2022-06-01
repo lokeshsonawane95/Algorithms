@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Algorithms
 {
-    internal class BubbleSort
+    internal class BubbleSort<T> where T : IComparable
     {
         public void Bubble()
         {
-            BubbleSort bubbleSort = new BubbleSort();
+            BubbleSort<T> bubbleSort = new BubbleSort<T>();
             Console.Write("Enter integers values separated by spaces to sort : ");
 
             //Taking input from user and storing it to strings array of type string

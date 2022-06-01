@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Algorithms
 {
-    internal class MergeSort
+    internal class MergeSort<T> where T : IComparable
     {
-        public void Merge(int[] array, int leftMostIndex, int middleIndex, int rightMostIndex)
+        public void Merge(T[] array, int leftMostIndex, int middleIndex, int rightMostIndex)
         {
             //Calculating the size for the leftSubArray
             //left sub array's size will be Last Index - Middle Index + 1(+1 because we are starting from 0)
@@ -18,8 +18,8 @@ namespace Algorithms
             int rightSubArraySize = rightMostIndex - middleIndex;
 
             //Creating temporary arrays for storing leftPart and rightPart
-            int[] leftSubArray = new int[leftSubArraySize];
-            int[] rightSubArray = new int[rightSubArraySize];
+            T[] leftSubArray = new T[leftSubArraySize];
+            T[] rightSubArray = new T[rightSubArraySize];
 
             //Inserting all the elements in their respective SubArrays
             for (int i1 = 0; i1 < leftSubArraySize; i1++)
@@ -44,7 +44,7 @@ namespace Algorithms
             while (i < leftSubArraySize && j < rightSubArraySize)
             {
                 //if element at i'th index of leftSubArray is less than element at j'th index of righSubArray
-                if (leftSubArray[i] <= rightSubArray[j])
+                if (leftSubArray[i].CompareTo(rightSubArray[j]) <= 0)
                 {
                     //then place at k'th index of array the element at i'th index of leftSubArray
                     array[k] = leftSubArray[i];
@@ -84,7 +84,7 @@ namespace Algorithms
 
         //Sort method will divide the array till only 1 element is remaining in the array
         //then it will compare and merge then with the help of Merge method
-        public void Sort(int[] array, int leftMostIndex, int rightMostIndex)
+        public void Sort(T[] array, int leftMostIndex, int rightMostIndex)
         {
             //If leftmost index is at the left and rightmost index is at the right side of the array
             if (leftMostIndex < rightMostIndex)
@@ -107,7 +107,7 @@ namespace Algorithms
         }
 
         //Method for printing the elements we want to be sorted
-        public void PrintArray(int[] sortArray)
+        public void PrintArray(T[] sortArray)
         {
             for (int i = 0; i < sortArray.Length; i++)
             {
@@ -116,20 +116,11 @@ namespace Algorithms
             Console.WriteLine();
         }
 
-        public void Driver()
+        public void Driver(T[] sortArray)
         {
-            MergeSort mergeSort = new MergeSort();
+            MergeSort<T> mergeSort = new MergeSort<T>();
 
-            Console.Write("Enter integer values one by one separated by spaces : ");
-            //Taking input from user and storing it to strings array of type string
-            string[] strings = Console.ReadLine().Split();
 
-            int[] sortArray = new int[strings.Length];
-            //Converting each string value in strings array to integer type and storing it to sortArray for further calculation
-            for (int i = 0; i < strings.Length; i++)
-            {
-                sortArray[i] = Convert.ToInt32(strings[i]);
-            }
 
             Console.Write("Array before sorting is : ");
             mergeSort.PrintArray(sortArray);

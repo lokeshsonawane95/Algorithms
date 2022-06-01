@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Algorithms
 {
-    internal class InsertionSort
+    internal class InsertionSort<T> where T : IComparable
     {
         //Insertion sort logic
         public void Insertion()
         {
-            InsertionSort insertionSort = new InsertionSort();
+            InsertionSort<T> insertionSort = new InsertionSort<T>();
 
             Console.Write("Enter integer values one by one separated by spaces : ");
             //Taking input from user and storing it to strings array of type string
